@@ -49,7 +49,7 @@ class HTML_QuickForm_header extends HTML_QuickForm_static
     */
     function __construct($elementName = null, $text = null)
     {
-        $this->HTML_QuickForm_static($elementName, null, $text);
+        parent::__construct($elementName, null, $text);
         $this->_type = 'header';
     }
 

@@ -170,7 +170,7 @@ class HTML_QuickForm_Renderer_Array extends HTML_QuickForm_Renderer
     */
     function __construct($collectHidden = false, $staticLabels = false)
     {
-        $this->HTML_QuickForm_Renderer();
+        parent::__construct();
         $this->_collectHidden = $collectHidden;
         $this->_staticLabels  = $staticLabels;
     } // end constructor

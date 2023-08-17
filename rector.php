@@ -15,6 +15,7 @@ return static function (RectorConfig $rectorConfig): void {
     // register a single rule
     $rectorConfig->rules([
         Php4ConstructorRector::class,
+        ParentCon
     ]);
 
     // define sets of rules

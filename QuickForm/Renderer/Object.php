@@ -94,7 +94,7 @@ class HTML_QuickForm_Renderer_Object extends HTML_QuickForm_Renderer
      */
     function __construct($collecthidden = false) 
     {
-        $this->HTML_QuickForm_Renderer();
+        parent::__construct();
         $this->_collectHidden = $collecthidden;
         $this->_obj = new QuickformForm;
     }

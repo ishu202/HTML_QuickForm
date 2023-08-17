@@ -54,7 +54,7 @@ class HTML_QuickForm_xbutton extends HTML_QuickForm_element
     */
     function __construct($elementName = null, $elementContent = null, $attributes = null)
     {
-        $this->HTML_QuickForm_element($elementName, null, $attributes);
+        parent::__construct($elementName, null, $attributes);
         $this->setContent($elementContent);
         $this->setPersistantFreeze(false);
         $this->_type = 'xbutton';
