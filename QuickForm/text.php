@@ -39,7 +39,7 @@ require_once 'HTML/QuickForm/input.php';
  */
 class HTML_QuickForm_text extends HTML_QuickForm_input
 {
-                
+
     // {{{ constructor
 
     /**
@@ -53,13 +53,13 @@ class HTML_QuickForm_text extends HTML_QuickForm_input
      * @access    public
      * @return    void
      */
-    function HTML_QuickForm_text($elementName=null, $elementLabel=null, $attributes=null)
+    function __construct($elementName=null, $elementLabel=null, $attributes=null)
     {
-        HTML_QuickForm_input::HTML_QuickForm_input($elementName, $elementLabel, $attributes);
+        parent::__construct($elementName, $elementLabel, $attributes);
         $this->_persistantFreeze = true;
         $this->setType('text');
     } //end constructor
-        
+
     // }}}
     // {{{ setSize()
 
@@ -93,6 +93,6 @@ class HTML_QuickForm_text extends HTML_QuickForm_input
     } //end func setMaxlength
 
     // }}}
-    
+
 } //end class HTML_QuickForm_text
 ?>

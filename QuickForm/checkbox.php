@@ -66,16 +66,16 @@ class HTML_QuickForm_checkbox extends HTML_QuickForm_input
      * @access    public
      * @return    void
      */
-    function HTML_QuickForm_checkbox($elementName=null, $elementLabel=null, $text='', $attributes=null)
+    function __construct($elementName=null, $elementLabel=null, $text='', $attributes=null)
     {
-        HTML_QuickForm_input::HTML_QuickForm_input($elementName, $elementLabel, $attributes);
+        parent::__construct($elementName, $elementLabel, $attributes);
         $this->_persistantFreeze = true;
         $this->_text = $text;
         $this->setType('checkbox');
         $this->updateAttributes(array('value'=>1));
         $this->_generateId();
     } //end constructor
-    
+
     // }}}
     // {{{ setChecked()
 
@@ -110,7 +110,7 @@ class HTML_QuickForm_checkbox extends HTML_QuickForm_input
     {
         return (bool)$this->getAttribute('checked');
     } //end func getChecked
-    
+
     // }}}
     // {{{ toHtml()
 
@@ -132,7 +132,7 @@ class HTML_QuickForm_checkbox extends HTML_QuickForm_input
         }
         return HTML_QuickForm_input::toHtml() . $label;
     } //end func toHtml
-    
+
     // }}}
     // {{{ getFrozenHtml()
 
@@ -271,7 +271,7 @@ class HTML_QuickForm_checkbox extends HTML_QuickForm_input
         }
         return $this->_prepareValue($value, $assoc);
     }
-    
+
     // }}}
 } //end class HTML_QuickForm_checkbox
 ?>

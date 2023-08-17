@@ -42,7 +42,7 @@ require_once 'HTML/QuickForm/element.php';
 class HTML_QuickForm_group extends HTML_QuickForm_element
 {
     // {{{ properties
-        
+
     /**
      * Name of the element
      * @var       string
@@ -101,7 +101,7 @@ class HTML_QuickForm_group extends HTML_QuickForm_element
      * @access    public
      * @return    void
      */
-    function HTML_QuickForm_group($elementName=null, $elementLabel=null, $elements=null, $separator=null, $appendName = true)
+    function __construct($elementName=null, $elementLabel=null, $elements=null, $separator=null, $appendName = true)
     {
         $this->HTML_QuickForm_element($elementName, $elementLabel);
         $this->_type = 'group';
@@ -115,7 +115,7 @@ class HTML_QuickForm_group extends HTML_QuickForm_element
             $this->_appendName = $appendName;
         }
     } //end constructor
-    
+
     // }}}
     // {{{ setName()
 
@@ -131,7 +131,7 @@ class HTML_QuickForm_group extends HTML_QuickForm_element
     {
         $this->_name = $name;
     } //end func setName
-    
+
     // }}}
     // {{{ getName()
 
@@ -181,7 +181,7 @@ class HTML_QuickForm_group extends HTML_QuickForm_element
             }
         }
     } //end func setValue
-    
+
     // }}}
     // {{{ getValue()
 
@@ -299,12 +299,12 @@ class HTML_QuickForm_group extends HTML_QuickForm_element
     function toHtml()
     {
         include_once('HTML/QuickForm/Renderer/Default.php');
-        $renderer =& new HTML_QuickForm_Renderer_Default();
+        $renderer = new HTML_QuickForm_Renderer_Default();
         $renderer->setElementTemplate('{element}');
         $this->accept($renderer);
         return $renderer->toHtml();
     } //end func toHtml
-    
+
     // }}}
     // {{{ getElementName()
 
@@ -438,7 +438,7 @@ class HTML_QuickForm_group extends HTML_QuickForm_element
         $name = $this->getName();
         foreach (array_keys($this->_elements) as $key) {
             $element =& $this->_elements[$key];
-            
+
             if ($this->_appendName) {
                 $elementName = $element->getName();
                 if (isset($elementName)) {

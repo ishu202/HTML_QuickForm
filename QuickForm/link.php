@@ -51,7 +51,7 @@ class HTML_QuickForm_link extends HTML_QuickForm_static
 
     // }}}
     // {{{ constructor
-    
+
     /**
      * Class constructor
      * 
@@ -65,7 +65,7 @@ class HTML_QuickForm_link extends HTML_QuickForm_static
      * @return    void
      * @throws    
      */
-    function HTML_QuickForm_link($elementName=null, $elementLabel=null, $href=null, $text=null, $attributes=null)
+    function __construct($elementName=null, $elementLabel=null, $href=null, $text=null, $attributes=null)
     {
         HTML_QuickForm_element::HTML_QuickForm_element($elementName, $elementLabel, $attributes);
         $this->_persistantFreeze = false;
@@ -73,7 +73,7 @@ class HTML_QuickForm_link extends HTML_QuickForm_static
         $this->setHref($href);
         $this->_text = $text;
     } //end constructor
-    
+
     // }}}
     // {{{ setName()
 
@@ -90,7 +90,7 @@ class HTML_QuickForm_link extends HTML_QuickForm_static
     {
         $this->updateAttributes(array('name'=>$name));
     } //end func setName
-    
+
     // }}}
     // {{{ getName()
 
@@ -123,7 +123,7 @@ class HTML_QuickForm_link extends HTML_QuickForm_static
     {
         return;
     } //end func setValue
-    
+
     // }}}
     // {{{ getValue()
 
@@ -140,7 +140,7 @@ class HTML_QuickForm_link extends HTML_QuickForm_static
         return;
     } // end func getValue
 
-    
+
     // }}}
     // {{{ setHref()
 
@@ -177,7 +177,7 @@ class HTML_QuickForm_link extends HTML_QuickForm_static
         $html .= "</a>";
         return $html;
     } //end func toHtml
-    
+
     // }}}
     // {{{ getFrozenHtml()
 

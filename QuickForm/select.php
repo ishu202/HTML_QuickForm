@@ -40,7 +40,7 @@ require_once 'HTML/QuickForm/element.php';
  * @since       1.0
  */
 class HTML_QuickForm_select extends HTML_QuickForm_element {
-    
+
     // {{{ properties
 
     /**
@@ -51,7 +51,7 @@ class HTML_QuickForm_select extends HTML_QuickForm_element {
      * @access    private
      */
     var $_options = array();
-    
+
     /**
      * Default values of the SELECT
      * 
@@ -63,7 +63,7 @@ class HTML_QuickForm_select extends HTML_QuickForm_element {
 
     // }}}
     // {{{ constructor
-        
+
     /**
      * Class constructor
      * 
@@ -75,16 +75,16 @@ class HTML_QuickForm_select extends HTML_QuickForm_element {
      * @access    public
      * @return    void
      */
-    function HTML_QuickForm_select($elementName=null, $elementLabel=null, $options=null, $attributes=null)
+    function __construct($elementName=null, $elementLabel=null, $options=null, $attributes=null)
     {
-        HTML_QuickForm_element::HTML_QuickForm_element($elementName, $elementLabel, $attributes);
+        parent::__construct($elementName, $elementLabel, $attributes);
         $this->_persistantFreeze = true;
         $this->_type = 'select';
         if (isset($options)) {
             $this->load($options);
         }
     } //end constructor
-    
+
     // }}}
     // {{{ apiVersion()
 
@@ -122,7 +122,7 @@ class HTML_QuickForm_select extends HTML_QuickForm_element {
             $this->_values = array($values);
         }
     } //end func setSelected
-    
+
     // }}}
     // {{{ getSelected()
 
@@ -153,7 +153,7 @@ class HTML_QuickForm_select extends HTML_QuickForm_element {
     {
         $this->updateAttributes(array('name' => $name));
     } //end func setName
-    
+
     // }}}
     // {{{ getName()
 
@@ -234,7 +234,7 @@ class HTML_QuickForm_select extends HTML_QuickForm_element {
     {
         $this->updateAttributes(array('size' => $size));
     } //end func setSize
-    
+
     // }}}
     // {{{ getSize()
 
@@ -269,7 +269,7 @@ class HTML_QuickForm_select extends HTML_QuickForm_element {
             $this->removeAttribute('multiple');
         }
     } //end func setMultiple
-    
+
     // }}}
     // {{{ getMultiple()
 
@@ -318,7 +318,7 @@ class HTML_QuickForm_select extends HTML_QuickForm_element {
         }
         $this->_options[] = array('text' => $text, 'attr' => $attributes);
     } // end func addOption
-    
+
     // }}}
     // {{{ loadArray()
 
@@ -382,7 +382,7 @@ class HTML_QuickForm_select extends HTML_QuickForm_element {
         }
         return true;
     } // end func loadDbResult
-    
+
     // }}}
     // {{{ loadQuery()
 
@@ -460,7 +460,7 @@ class HTML_QuickForm_select extends HTML_QuickForm_element {
                 break;
         }
     } // end func load
-    
+
     // }}}
     // {{{ toHtml()
 
@@ -505,7 +505,7 @@ class HTML_QuickForm_select extends HTML_QuickForm_element {
             return $strHtml . $tabs . '</select>';
         }
     } //end func toHtml
-    
+
     // }}}
     // {{{ getFrozenHtml()
 
@@ -584,7 +584,7 @@ class HTML_QuickForm_select extends HTML_QuickForm_element {
             return $this->_prepareValue($cleanValue, $assoc);
         }
     }
-    
+
     // }}}
     // {{{ onQuickFormEvent()
 

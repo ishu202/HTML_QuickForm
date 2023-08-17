@@ -290,7 +290,7 @@ class HTML_QuickForm_date extends HTML_QuickForm_group
     * @param    array   Options to control the element's display
     * @param    mixed   Either a typical HTML attribute string or an associative array
     */
-    function HTML_QuickForm_date($elementName = null, $elementLabel = null, $options = array(), $attributes = null)
+    function __construct($elementName = null, $elementLabel = null, $options = array(), $attributes = null)
     {
         $this->HTML_QuickForm_element($elementName, $elementLabel, $attributes);
         $this->_persistantFreeze = true;
@@ -423,7 +423,7 @@ class HTML_QuickForm_date extends HTML_QuickForm_group
                             $options = array($this->_options['emptyOptionValue'] => $this->_options['emptyOptionText']) + $options;
                         }
                     }
-                    $this->_elements[] =& new HTML_QuickForm_select($sign, null, $options, $this->getAttributes());
+                    $this->_elements[] = new HTML_QuickForm_select($sign, null, $options, $this->getAttributes());
                 }
             }
         }
@@ -511,7 +511,7 @@ class HTML_QuickForm_date extends HTML_QuickForm_group
     function toHtml()
     {
         include_once('HTML/QuickForm/Renderer/Default.php');
-        $renderer =& new HTML_QuickForm_Renderer_Default();
+        $renderer = new HTML_QuickForm_Renderer_Default();
         $renderer->setElementTemplate('{element}');
         parent::accept($renderer);
         return $this->_wrap[0] . $renderer->toHtml() . $this->_wrap[1];

@@ -52,7 +52,7 @@ class HTML_QuickForm_input extends HTML_QuickForm_element
      * @access    public
      * @return    void
      */
-    function HTML_QuickForm_input($elementName=null, $elementLabel=null, $attributes=null)
+    function __construct($elementName=null, $elementLabel=null, $attributes=null)
     {
         $this->HTML_QuickForm_element($elementName, $elementLabel, $attributes);
     } //end constructor
@@ -73,7 +73,7 @@ class HTML_QuickForm_input extends HTML_QuickForm_element
         $this->_type = $type;
         $this->updateAttributes(array('type'=>$type));
     } // end func setType
-    
+
     // }}}
     // {{{ setName()
 
@@ -89,7 +89,7 @@ class HTML_QuickForm_input extends HTML_QuickForm_element
     {
         $this->updateAttributes(array('name'=>$name));
     } //end func setName
-    
+
     // }}}
     // {{{ getName()
 
@@ -104,7 +104,7 @@ class HTML_QuickForm_input extends HTML_QuickForm_element
     {
         return $this->getAttribute('name');
     } //end func getName
-    
+
     // }}}
     // {{{ setValue()
 
@@ -135,7 +135,7 @@ class HTML_QuickForm_input extends HTML_QuickForm_element
     {
         return $this->getAttribute('value');
     } // end func getValue
-    
+
     // }}}
     // {{{ toHtml()
 
@@ -203,7 +203,7 @@ class HTML_QuickForm_input extends HTML_QuickForm_element
             return parent::exportValue($submitValues, $assoc);
         }
     }
-    
+
     // }}}
 } // end class HTML_QuickForm_element
 ?>

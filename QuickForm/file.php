@@ -70,12 +70,12 @@ class HTML_QuickForm_file extends HTML_QuickForm_input
      * @since     1.0
      * @access    public
      */
-    function HTML_QuickForm_file($elementName=null, $elementLabel=null, $attributes=null)
+    function __construct($elementName=null, $elementLabel=null, $attributes=null)
     {
-        HTML_QuickForm_input::HTML_QuickForm_input($elementName, $elementLabel, $attributes);
+        parent::__construct($elementName, $elementLabel, $attributes);
         $this->setType('file');
     } //end constructor
-    
+
     // }}}
     // {{{ setSize()
 
@@ -90,7 +90,7 @@ class HTML_QuickForm_file extends HTML_QuickForm_input
     {
         $this->updateAttributes(array('size' => $size));
     } //end func setSize
-    
+
     // }}}
     // {{{ getSize()
 
@@ -140,7 +140,7 @@ class HTML_QuickForm_file extends HTML_QuickForm_input
     {
         return null;
     } //end func setValue
-    
+
     // }}}
     // {{{ getValue()
 
@@ -211,7 +211,7 @@ class HTML_QuickForm_file extends HTML_QuickForm_input
         $fileName = ($fileName != '') ? $fileName : basename($this->_value['name']);
         return move_uploaded_file($this->_value['tmp_name'], $dest . $fileName); 
     } // end func moveUploadedFile
-    
+
     // }}}
     // {{{ isUploadedFile()
 
@@ -245,7 +245,7 @@ class HTML_QuickForm_file extends HTML_QuickForm_input
             return false;
         }
     } // end func _ruleIsUploadedFile
-    
+
     // }}}
     // {{{ _ruleCheckMaxFileSize()
 
@@ -309,7 +309,7 @@ class HTML_QuickForm_file extends HTML_QuickForm_input
         }
         return (bool)preg_match($regex, $elementValue['name']);
     } // end func _ruleCheckFileName
-    
+
     // }}}
     // {{{ _findValue()
 

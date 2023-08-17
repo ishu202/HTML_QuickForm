@@ -64,7 +64,7 @@ class HTML_QuickForm_radio extends HTML_QuickForm_input
      * @access    public
      * @return    void
      */
-    function HTML_QuickForm_radio($elementName=null, $elementLabel=null, $text=null, $value=null, $attributes=null)
+    function __construct($elementName=null, $elementLabel=null, $text=null, $value=null, $attributes=null)
     {
         $this->HTML_QuickForm_element($elementName, $elementLabel, $attributes);
         if (isset($value)) {
@@ -75,7 +75,7 @@ class HTML_QuickForm_radio extends HTML_QuickForm_input
         $this->_text = $text;
         $this->_generateId();
     } //end constructor
-    
+
     // }}}
     // {{{ setChecked()
 
@@ -110,7 +110,7 @@ class HTML_QuickForm_radio extends HTML_QuickForm_input
     {
         return $this->getAttribute('checked');
     } //end func getChecked
-        
+
     // }}}
     // {{{ toHtml()
 
@@ -132,7 +132,7 @@ class HTML_QuickForm_radio extends HTML_QuickForm_input
         }
         return HTML_QuickForm_input::toHtml() . $label;
     } //end func toHtml
-    
+
     // }}}
     // {{{ getFrozenHtml()
 
@@ -245,7 +245,7 @@ class HTML_QuickForm_radio extends HTML_QuickForm_input
         }
         return $this->_prepareValue($value, $assoc);
     }
-    
+
     // }}}
 } //end class HTML_QuickForm_radio
 ?>
