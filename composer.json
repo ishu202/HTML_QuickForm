@@ -46,11 +46,31 @@
     "type": "library",
     "require": {
         "pear/pear_exception": "*",
-        "pear/html_common": "*"
+        "pear/html_common": "1.2.5"
     },
     "require-dev": {
         "phpunit/phpunit": "*"
     },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://repo.packagist.org",
+            "exclude": [ "pear/html_common"]
+        },
+        {
+            "type": "package",
+            "package": [
+                {
+                    "name": "pear/html_common",
+                    "version": "1.2.5",
+                    "dist": {
+                        "url": "https://github.com/ishu202/HTML_Common/archive/refs/tags/1.2.5.zip",
+                        "type": "zip"
+                    }
+                }
+            ]
+        }
+    ],
     "config": {
         "platform": {
             "php": "8.2"
