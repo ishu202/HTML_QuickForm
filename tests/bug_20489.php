@@ -7,8 +7,9 @@ if (defined('E_DEPRECATED')) {
 } else {
     error_reporting(E_ALL & ~E_NOTICE & ~E_STRICT);
 }
-
-require_once "HTML/QuickForm.php";
+$cwd = getcwd();
+var_dump($cwd);
+require_once "$cwd/vendor/autoload.php";
 
 $form = new HTML_QuickForm('register', 'post'); 
 $form->addElement('text', 't1', 'Text'); 

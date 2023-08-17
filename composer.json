@@ -34,6 +34,9 @@
     "autoload": {
         "classmap": [
             "./"
+        ],
+        "files": [
+            "polyfills/get_magic_quotes.php"
         ]
     },
     "description": "More info available on: http://pear.php.net/package/HTML_QuickForm",
@@ -47,7 +50,8 @@
     "require": {
         "pear/pear_exception": "*",
         "pear/html_common": "1.2.5",
-        "php5friends/polyfill-create_function": "^0.0.4"
+        "php5friends/polyfill-create_function": "^0.0.4",
+        "pear/pear-core-minimal": "^1.10"
     },
     "require-dev": {
         "phpunit/phpunit": "*",
